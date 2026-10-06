@@ -1,77 +1,106 @@
-Banking API Automation
+# P2 - Banking API Automation
 
-Project Overview
+Playwright + TypeScript API automation project for testing banking account endpoints.
 
-This project contains API automation tests for a banking application using Playwright and TypeScript.
+## Project Overview
 
-The main purpose of the project is to validate API responses, status codes, response data, negative scenarios, pagination, and response metadata.
+This project focuses on validating API responses, status codes, JSON data, pagination, and negative scenarios.
 
-Application Under Test
+## Application Under Test
 
 Banking API practice environment:
 
-"https://api.qaautomationlabs.com/v1"
+https://api.qaautomationlabs.com/v1
 
-Tech Stack
+## Tools and Technologies
 
 - Playwright
 - TypeScript
 - Node.js
 - REST API
 - JSON
+- GitHub Actions
 
-Test Scenarios
+## Test Coverage
 
-The project currently covers 6 API test scenarios:
+The project covers these API scenarios:
 
-1. Get all bank accounts successfully
-2. Get a single bank account successfully
-3. Verify bank account details
-4. Verify pagination information
-5. Verify invalid account ID returns 404
-6. Verify API response metadata
+- Get all bank accounts successfully
+- Get a single bank account successfully
+- Verify bank account details
+- Verify pagination information
+- Verify an invalid account ID returns `404`
+- Verify API response metadata
 
-Validations Covered
+## Validations
 
 - HTTP status codes
 - JSON response body
 - Account details
 - Account balance
 - Pagination information
-- Error response for invalid account ID
+- Error responses
 - Response metadata
 
-Project Structure
+## Project Structure
 
+```text
 P2-Banking-API-Automation/
+├── .github/
+│   └── workflows/
+│       └── playwright.yml
+├── test-data/
 ├── tests/
 │   └── banking-api.spec.ts
-├── test-data/
-├── playwright.config.ts
 ├── package.json
 ├── package-lock.json
-└── .gitignore
+├── playwright.config.ts
+└── README.md
+```
 
-How to Run
+## Test Execution
 
 Install dependencies:
 
+```bash
 npm install
+```
 
-Run the API tests:
+Run all API tests:
 
+```bash
 npx playwright test
+```
 
 Run the banking API test file:
 
+```bash
 npx playwright test tests/banking-api.spec.ts
+```
 
 Run with the list reporter:
 
+```bash
 npx playwright test tests/banking-api.spec.ts --reporter=list
+```
 
-Test Result
+## GitHub Actions CI
 
-The test suite has been executed successfully against the banking API practice environment.
+GitHub Actions is configured to:
 
-Note: The API is an external practice environment, so occasional connection timeouts may occur due to server or network availability. The tests were also verified successfully after rerunning the affected test.
+1. Check out the repository
+2. Install npm dependencies
+3. Run the Playwright API test suite
+
+## Note
+
+This project uses a public practice API. Test results can be affected by external service or network availability.
+
+## What I Practiced
+
+- API testing using Playwright and TypeScript
+- HTTP status-code validation
+- JSON response validation
+- Positive and negative API scenarios
+- Pagination validation
+- GitHub Actions CI
